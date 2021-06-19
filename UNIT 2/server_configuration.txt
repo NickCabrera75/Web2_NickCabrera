@@ -1,0 +1,19 @@
+==== THESE LINES MUST BE ADDED TO httpd.conf
+
+Listen 8080
+
+<Directory "YOUR ENTIRE PATH COMES HERE">
+    Options Indexes FollowSymLinks Includes ExecCGI
+    AllowOverride All
+    Require all granted
+</Directory>
+
+==== THESE LINES MUST BE ADDED TO httpd-vhosts.conf
+
+<VirtualHost *:8080>
+    ServerAdmin webmaster@progweb2b
+    DocumentRoot "YOUR ENTIRE PATH COMES HERE"
+    ServerName progweb2b
+    ErrorLog "logs/progweb2b"
+    CustomLog "logs/progweb2b.log" common
+</VirtualHost>
